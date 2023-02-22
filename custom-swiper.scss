@@ -1,0 +1,26 @@
+// .swiper-horizontal{
+//   background-color: antiquewhite;
+//   width:100%;
+//   .swiper-wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//     transform: none;
+  // }
+  // .swiper-slide{
+  //   width: 20%;
+  //   // margin-right: 10px;
+  // }
+// }
+
+.cryptoSlider {
+  .swiper-wrapper{
+    margin-bottom: 10px;
+    .swiper-slide{
+      min-height: 100%;
+      height: 200px;
+      .card{
+        height: 100%;
+      }
+    }
+  }
+}

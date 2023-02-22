@@ -1,0 +1,68 @@
+
+/*# sourceMappingURL=custom.min.css.map */
+
+
+Html, body {overflow-x: hidden}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+video {
+  width: 80%;
+  height: 70vh;
+  max-width: 2560px;
+  position: relative;
+  top: 30px; 
+}
+
+.apexcharts-canvas svg {
+    max-width: 100% !important;
+}
+.apexcharts-canvas {
+    max-width: 100% !important;
+}
+
+video.fullscreen {
+  position: absolute;
+  z-index: -2;
+  object-fit: cover;
+  width:100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::-webkit-media-controls {
+     display:none !important;
+  }
+}
+
+.how-to-start-box:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+
+}
+
+.how-to-start-box {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.stats-box {
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.stats-box:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+#detach-button-host {
+    display: none !important;
+}
