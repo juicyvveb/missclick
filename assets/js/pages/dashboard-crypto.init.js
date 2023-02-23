@@ -850,7 +850,7 @@ if (areachartdogeColors) {
 // Swiper Slider
 var swiper = new Swiper(".cryptoSlider", {
   slidesPerView: 2,
-  loop: true,
+  // loop: true,
   spaceBetween: 24,
   navigation: {
     nextEl: ".swiper-button-next",
