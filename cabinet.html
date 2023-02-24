@@ -28,8 +28,7 @@
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
-
-    <link href="./custom-swiper.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom-swiper-dashboard.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -820,15 +819,108 @@
                                             <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Current Year<i class="mdi mdi-chevron-down ms-1"></i></span>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Last Week</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                                <a class="dropdown-item" href="#">Current Year</a>
+                                            <div class="dropdown-menu dropdown-menu-end" id="period-radio">
+                                                <input type="radio" style="display: none" name="period" value="today" id="today">
+                                                <label class="dropdown-item" for="today">Today</label>
+                                                <input type="radio" style="display: none" name="period" value="last-week" id="last-week">
+                                                <label class="dropdown-item" for="last-week">Last Week</label>
+                                                <input type="radio" style="display: none" name="period" value="last-month" id="last-month">
+                                                <label class="dropdown-item" for="last-month">Last Month</label>
+                                                <input type="radio" style="display: none" name="period" value="current-year" id="current-year">
+                                                <label class="dropdown-item" for="current-year">Current Year</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div><!-- end card header -->
+
+                                <!-- start data-blocks -->
+                                <div id="data-today" style="display: none;">
+                                    <div data-section="day" data-name="01" data-revenue="10" data-expenses="140"></div>
+                                    <div data-section="day" data-name="02" data-revenue="20" data-expenses="20"></div>
+                                    <div data-section="day" data-name="03" data-revenue="30" data-expenses="150"></div>
+                                    <div data-section="day" data-name="04" data-revenue="40" data-expenses="240"></div>
+                                    <div data-section="day" data-name="05" data-revenue="50" data-expenses="30"></div>
+                                    <div data-section="day" data-name="06" data-revenue="60" data-expenses="180"></div>
+                                    <div data-section="day" data-name="07" data-revenue="70" data-expenses="140"></div>
+                                    <div data-section="day" data-name="08" data-revenue="170" data-expenses="40"></div>
+                                    <div data-section="day" data-name="09" data-revenue="240" data-expenses="60"></div>
+                                    <div data-section="day" data-name="10" data-revenue="150" data-expenses="30"></div>
+                                    <div data-section="day" data-name="11" data-revenue="70" data-expenses="20"></div>
+                                    <div data-section="day" data-name="12" data-revenue="90" data-expenses="90"></div>
+                                    <div data-section="day" data-name="13" data-revenue="30" data-expenses="190"></div>
+                                    <div data-section="day" data-name="14" data-revenue="20" data-expenses="240"></div>
+                                    <div data-section="day" data-name="15" data-revenue="10" data-expenses="246"></div>
+                                    <div data-section="day" data-name="16" data-revenue="50" data-expenses="25"></div>
+                                    <div data-section="day" data-name="17" data-revenue="150" data-expenses="40"></div>
+                                    <div data-section="day" data-name="18" data-revenue="10" data-expenses="30"></div>
+                                    <div data-section="day" data-name="19" data-revenue="230" data-expenses="10"></div>
+                                    <div data-section="day" data-name="20" data-revenue="190" data-expenses="0"></div>
+                                    <div data-section="day" data-name="21" data-revenue="220" data-expenses="140"></div>
+                                    <div data-section="day" data-name="22" data-revenue="240" data-expenses="180"></div>
+                                    <div data-section="day" data-name="23" data-revenue="170" data-expenses="200"></div>
+                                    <div data-section="day" data-name="24" data-revenue="10" data-expenses="240"></div>
+                                </div>
+
+                                <div id="data-last-week" style="display: none;">
+                                    <div data-section="week" data-name="monday" data-revenue="10" data-expenses="140"></div>
+                                    <div data-section="week" data-name="tuesday" data-revenue="50" data-expenses="240"></div>
+                                    <div data-section="week" data-name="wednesday" data-revenue="60" data-expenses="40"></div>
+                                    <div data-section="week" data-name="thursday" data-revenue="30" data-expenses="30"></div>
+                                    <div data-section="week" data-name="friday" data-revenue="80" data-expenses="10"></div>
+                                    <div data-section="week" data-name="saturday " data-revenue="160" data-expenses="80"></div>
+                                    <div data-section="week" data-name="sunday" data-revenue="170" data-expenses="120"></div>
+                                </div>
+
+                                <div id="data-last-month" style="display: none;">
+                                    <div data-section="month" data-name="01" data-revenue="12" data-expenses="80"></div>
+                                    <div data-section="month" data-name="02" data-revenue="34" data-expenses="10"></div>
+                                    <div data-section="month" data-name="03" data-revenue="35" data-expenses="20"></div>
+                                    <div data-section="month" data-name="04" data-revenue="55" data-expenses="110"></div>
+                                    <div data-section="month" data-name="05" data-revenue="78" data-expenses="240"></div>
+                                    <div data-section="month" data-name="06" data-revenue="98" data-expenses="71"></div>
+                                    <div data-section="month" data-name="07" data-revenue="111" data-expenses="60"></div>
+                                    <div data-section="month" data-name="08" data-revenue="154" data-expenses="50"></div>
+                                    <div data-section="month" data-name="09" data-revenue="123" data-expenses="140"></div>
+                                    <div data-section="month" data-name="10" data-revenue="42" data-expenses="240"></div>
+                                    <div data-section="month" data-name="11" data-revenue="222" data-expenses="150"></div>
+                                    <div data-section="month" data-name="12" data-revenue="245" data-expenses="90"></div>
+                                    <div data-section="month" data-name="13" data-revenue="196" data-expenses="20"></div>
+                                    <div data-section="month" data-name="14" data-revenue="70" data-expenses="30"></div>
+                                    <div data-section="month" data-name="15" data-revenue="40" data-expenses="60"></div>
+                                    <div data-section="month" data-name="16" data-revenue="50" data-expenses="80"></div>
+                                    <div data-section="month" data-name="17" data-revenue="60" data-expenses="90"></div>
+                                    <div data-section="month" data-name="18" data-revenue="80" data-expenses="240"></div>
+                                    <div data-section="month" data-name="19" data-revenue="90" data-expenses="190"></div>
+                                    <div data-section="month" data-name="20" data-revenue="30" data-expenses="120"></div>
+                                    <div data-section="month" data-name="21" data-revenue="20" data-expenses="110"></div>
+                                    <div data-section="month" data-name="22" data-revenue="30" data-expenses="90"></div>
+                                    <div data-section="month" data-name="23" data-revenue="40" data-expenses="70"></div>
+                                    <div data-section="month" data-name="24" data-revenue="50" data-expenses="10"></div>
+                                    <div data-section="month" data-name="25" data-revenue="60" data-expenses="20"></div>
+                                    <div data-section="month" data-name="26" data-revenue="170" data-expenses="20"></div>
+                                    <div data-section="month" data-name="27" data-revenue="10" data-expenses="40"></div>
+                                    <div data-section="month" data-name="28" data-revenue="20" data-expenses="60"></div>
+                                    <div data-section="month" data-name="29" data-revenue="30" data-expenses="134"></div>
+                                    <div data-section="month" data-name="30" data-revenue="40" data-expenses="240"></div>
+                                    <div data-section="month" data-name="31" data-revenue="60" data-expenses="145"></div>
+                                </div>
+
+                                <div id="data-last-year" style="display: none;">
+                                    <div data-section="year" data-name="januar" data-revenue="10" data-expenses="10"></div>
+                                    <div data-section="year" data-name="februar" data-revenue="20" data-expenses="20"></div>
+                                    <div data-section="year" data-name="march" data-revenue="30" data-expenses="20"></div>
+                                    <div data-section="year" data-name="april" data-revenue="40" data-expenses="240"></div>
+                                    <div data-section="year" data-name="mai" data-revenue="50" data-expenses="110"></div>
+                                    <div data-section="year" data-name="juni " data-revenue="60" data-expenses="60"></div>
+                                    <div data-section="year" data-name="juli" data-revenue="70" data-expenses="50"></div>
+                                    <div data-section="year" data-name="august" data-revenue="112" data-expenses="20"></div>
+                                    <div data-section="year" data-name="september" data-revenue="150" data-expenses="25"></div>
+                                    <div data-section="year" data-name="oсtober" data-revenue="50" data-expenses="144"></div>
+                                    <div data-section="year" data-name="november" data-revenue="20" data-expenses="155"></div>
+                                    <div data-section="year" data-name="december" data-revenue="10" data-expenses="90"></div>
+                                </div>
+
+
                                 <div class="card-body px-0">
                                     <ul class="list-inline main-chart text-center mb-0">
                                         <li class="list-inline-item chart-border-left me-0 border-0">
@@ -1265,7 +1357,8 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
 
     <!-- Dashboard init -->
-	<script src="assets/js/pages/dashboard-crm.init.js"></script>
+	<!-- <script src="assets/js/pages/dashboard-crm.init.js"></script> -->
+	<script src="./dashboard-crm.init.js"></script>
     <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
 	<script src="assets/js/pages/dashboard-crypto.init.js"></script>
 
