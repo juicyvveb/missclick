@@ -2941,7 +2941,51 @@ code {
     top: 0;
     bottom: 0;
     z-index: 1004;
+    }
 }
+
+@media (min-width: 1700px) {
+    .layout-rightside-col {
+        /* display: none; */
+        position: relative;
+        height: 100vh;
+        z-index: 50;
+        /* margin-left: auto; */
+        flex: 0 0 auto;
+        border: 2px solid pink;
+        transform: translateY(-23px);
+        min-width: 280px;
+    }
+
+    .layout-rightside-col .layout-rightside{
+        margin-left: 0;
+    }
+
+
+    .layout-rightside-col .layout-rightside .card {
+        border-top: none;
+    }
+    .layout-rightside-col::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .layout-rightside-col .overlay {
+        display: none;
+    }
+    .columnBy1700 {
+        /* width: 100%; */
+        max-width: 100%;
+        flex: 1 0 0%;
+        border: 2px solid yellow;
+    }
+
+    .rightSidebar-btn {
+        display: none;
+    }
+    
+}
+
+
 .layout-rightside-col .overlay {
     position: fixed;
     top: 0;
@@ -14186,6 +14230,7 @@ body::before {
     .layout-rightside-col .card {
     background-color: var(--vz-gray-300);
 }
+
 }.apex-charts .apexcharts-pie-series path {
     stroke: var(--vz-card-bg-fill);
 }
