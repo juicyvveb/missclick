@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const warnText = document.querySelector('.noresult');
   const searchInput = document.querySelector('#operations-search');
-  const form = document.querySelector('#operationsSearchForm');
+  const filterBtn = document.querySelector('#operation-filter');
   const options = {
     valueNames: ['currency_name','s_operation', 's_coming', "s_spending", "s_batch", "s_data", "s_status", "s_description", "s_action"],
     page: 10,
@@ -13,12 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
   };
   let searchText = "", statusValue = "", systemValue = "";
-  const filterBtn = document.querySelector('#operation-filter')
   let list = new List('operations', options);
   
-  searchInput.addEventListener('input', (e) => {
+  searchInput.addEventListener('change', (e) => {
     searchText = e.target.value.toLowerCase();
-    // list.filter((item) => filter(item, searchInput, selectSystem, selectStatus))
+    filter()
   })
 
   const choiceStatus = new Choices('#SelectStatusOperation', {
@@ -37,15 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     systemValue = e.detail.choice.value;
   })
 
-  // selectSystem.addEventListener('input', (e) => {
-  //   list.filter((item) =>  filter(item))
-  // })
-
-  // selectStatus.addEventListener('input', (e) => {
-  //   list.filter((item) =>  filter(item))
-  // })
-
-
   list.on('updated', (e) => {
     !e.matchingItems.length ? warnText.style.display = "block" : warnText.style.display = "none";
 
@@ -53,13 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     e.matchingItems.length ? document.querySelector(`#operations .pagination-wrap`).style.display = "flex" : document.querySelector(`#operations .pagination-wrap`).style.display = "none"
   })
 
-  filterBtn.onclick = () => {
-    
-  }
+  filterBtn.onclick = filter
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log('submit')
+  function filter(){
     list.filter(item => {
       return (item.values().currency_name.toLowerCase().includes(searchText) 
     || item.values().s_operation.toLowerCase().includes(searchText)
@@ -70,13 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ||  item.values().s_description.toLowerCase().includes(searchText)
     ||  item.values().s_action.toLowerCase().includes(searchText)
     ) && item.values().s_status.toLowerCase().includes(statusValue) && item.values().currency_name.toLowerCase().includes(systemValue)
-  })  
-  })
-  // function filter(item, search = searchInput, system = selectSystem, status = selectStatus){
-  //   return (
-  //     item.values()['currency_name'].toLowerCase().includes(search.value.toLowerCase()) || item.values()['s_operation'].toLowerCase().includes(search.value.toLowerCase())
-  //   ) && (item.values().s_status.toLowerCase().includes(status.value.toLowerCase()) && item.values().currency_name.toLowerCase().includes(system.value.toLowerCase()))
-  // }
+  }) 
+  }
 });
 
 

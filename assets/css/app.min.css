@@ -14480,3 +14480,13 @@ body::before {
         text-align: center;
     }
 }
+
+
+
+#refTableLevel1 .id{
+    min-width: 55px;       
+}
+
+#scroll-horizontal .s_system{
+    min-width: 230px;
+}
