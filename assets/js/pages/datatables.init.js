@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     paging: !1
   })
 }), document.addEventListener("DOMContentLoaded", function () {
-  new DataTable("#scroll-horizontal", {
+  let n = new DataTable("#scroll-horizontal", {
     scrollX: !0,
     searching: false,
     paging:false,
+    bInfo: false,
   })
-}), document.addEventListener("DOMContentLoaded", function () {
+  console.log(n)
+}),
+document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#alternative-pagination", {
     pagingType: "full_numbers"
   })
@@ -57,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#depositsTable", {
     scrollX: !0,
     searching: false,
-    paging: false
+    paging: false,
+    bInfo: false,
   })
 }),
 document.addEventListener("DOMContentLoaded", function () { //referals Table create
@@ -65,5 +69,6 @@ document.addEventListener("DOMContentLoaded", function () { //referals Table cre
     scrollX: true,
     searching: false,
     paging: false,
+    bInfo: false,
   })
 })
