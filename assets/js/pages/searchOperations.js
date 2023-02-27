@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   choiceSystem.passedElement.element.addEventListener('choice', (e) => {
     systemValue = e.detail.choice.value;
+    console.log(systemValue)
   })
 
   list.on('updated', (e) => {
@@ -46,8 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   filterBtn.onclick = filter
 
   function filter(){
-    list.filter(item => {
-      return (item.values().currency_name.toLowerCase().includes(searchText) 
+    list.filter(item => (item.values().currency_name.toLowerCase().includes(searchText) 
     || item.values().s_operation.toLowerCase().includes(searchText)
     ||  item.values().s_coming.toLowerCase().includes(searchText)
     ||  item.values().s_spending.toLowerCase().includes(searchText)
@@ -56,8 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ||  item.values().s_description.toLowerCase().includes(searchText)
     ||  item.values().s_action.toLowerCase().includes(searchText)
     ) && item.values().s_status.toLowerCase().includes(statusValue) && item.values().currency_name.toLowerCase().includes(systemValue)
-  }) 
+  ) 
   }
+
+
 });
 
 
