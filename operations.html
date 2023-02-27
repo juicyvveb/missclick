@@ -935,25 +935,25 @@
                                     <i class="ri-search-line search-icon"></i>
                                 </div> -->
                                 <div class="card-body" >
-                                    <div class="table-responsive table-card mb-4" style="overflow-x: auto;">
+                                    <div class="table-responsive table-card mb-4" style="overflow-x: auto; white-space: nowrap">
                                         <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
-                                            <thead>
+                                            <thead style="width:100%">
                                                 <tr>
-                                                    <th>SR No.</th>
-                                                    <th>Operation</th>
-                                                    <th>Payment system</th>
-                                                    <th>Coming</th>
-                                                    <th>Spending</th>
-                                                    <th>Batch-num</th>
-                                                    <th>Data and time</th>
-                                                    <th>Status</th>
-                                                    <th>Description</th>
-                                                    <th>Action</th>
+                                                    <th class="sort asc" data-sort="number" style="min-width: 85px">SR No.</th>
+                                                    <th class="sort" data-sort="s_operation" style="min-width: 115px">Operation</th>
+                                                    <th class="sort" data-sort="currency_name">Payment system</th>
+                                                    <th class="sort" data-sort="s_coming" style="min-width: 100px">Coming</th>
+                                                    <th class="sort" data-sort="s_spending" style="min-width: 100px">Spending</th>
+                                                    <th class="sort" data-sort="s_batch">Batch-num</th>
+                                                    <th class="sort" data-sort="s_data">Data and time</th>
+                                                    <th class="sort" data-sort="s_status">Status</th>
+                                                    <th class="sort" data-sort="s_description" style="min-width: 120px">Description</th>
+                                                    <th class="sort" data-sort="s_action">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="list">
-                                                <tr>
-                                                    <td>01</td>
+                                            <tbody class="list form-check-all">
+                                                <tr data-id="1">
+                                                    <td class="number">01</td>
                                                     <td><a href="#!" class="s_operation">Profit</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -976,9 +976,8 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>02</td>
+                                                <tr data-id="2">
+                                                    <td class="number">02</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1001,9 +1000,8 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>03</td>
+                                                <tr data-id="3">
+                                                    <td class="number">03</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1026,9 +1024,8 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>04</td>
+                                                <tr data-id="4">
+                                                    <td class="number">04</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1051,9 +1048,9 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="5">
 
-                                                    <td>05</td>
+                                                    <td class="number">05</td>
                                                     <td><a href="#!" class="s_operation">Deposit</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1076,9 +1073,8 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>06</td>
+                                                <tr data-id="6">
+                                                    <td class="number">06</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1101,9 +1097,9 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="7">
 
-                                                    <td>07</td>
+                                                    <td class="number">07</td>
                                                     <td><a href="#!" class="s_operation">Profit</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1127,9 +1123,9 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="8">
 
-                                                    <td>08</td>
+                                                    <td class="number">08</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1152,9 +1148,9 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="9">
 
-                                                    <td>09</td>
+                                                    <td class="number">09</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1177,9 +1173,9 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="10">
 
-                                                    <td>10</td>
+                                                    <td class="number">10</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -1202,11 +1198,11 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="11">
 
-                                                    <td>11</td>
+                                                    <td class="number">11</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
-                                                    <td>USDT TRC-20</td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$125.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
@@ -1218,11 +1214,11 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="12">
 
-                                                    <td>12</td>
+                                                    <td class="number">12</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
-                                                    <td>USDT TRC-20</td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$44.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
@@ -1234,11 +1230,11 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="13">
 
-                                                    <td>13</td>
+                                                    <td class="number">13</td>
                                                     <td><a href="#!" class="s_operation">Refill</a></td>
-                                                    <td>USDT TRC-20</td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$12.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">19d49b17c3b5ca1d2a07d2b1cb62d000d9f33fb6</td>
@@ -1250,11 +1246,10 @@
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>14</td>
+                                                <tr data-id="14">
+                                                    <td class="number">14</td>
                                                     <td><a href="#!" class="s_operation">Deposit</a></td>
-                                                    <td>USDT TRC-20</td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming">—</td>
                                                     <td class="s_spending"><span class="text-danger">$165.00</span></td>
                                                     <td class="s_batch">—</td>
@@ -1279,7 +1274,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end mt-3">
+                                    <div class="d-flex justify-content-between align-items-center  mt-3">
+                                        <div class="dataTables_info" id="b-info">Showing  1 to $ of __ entries<span class=".filtered">(filtered from 14 total entries)</span></div>
                                         <div class="pagination-wrap hstack gap-2">
                                             <a class="page-item pagination-prev disabled" href="#">
                                                 Previous
@@ -1371,8 +1367,6 @@
     <!-- for making list from table -->
     <script src="assets/libs/list.js/list.min.js"></script>
     
-    <script src="assets/js/pages/datatables.init.js"></script>
-
     <!-- setting operationList, search function and filter functions -->
     <script src="assets/js/pages/searchOperations.js"></script>
 

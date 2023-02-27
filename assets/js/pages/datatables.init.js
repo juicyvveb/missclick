@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     searching: false,
     paging:false,
     bInfo: false,
+    "ordering": false
   })
-  console.log(n)
 }),
 document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#alternative-pagination", {
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searching: false,
     paging: false,
     bInfo: false,
+    ordering: false
   })
 }),
 document.addEventListener("DOMContentLoaded", function () { //referals Table create
