@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
 }), document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#scroll-horizontal", {
     scrollX: !0,
-    searching: false
+    searching: false,
+    paging:false,
   })
 }), document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#alternative-pagination", {
@@ -52,4 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
   new DataTable("#ajax-datatables", {
     ajax: "assets/json/datatable.json"
   })
-});
+}), document.addEventListener("DOMContentLoaded", function () { //deposits Table create
+  new DataTable("#depositsTable", {
+    scrollX: !0,
+    searching: false,
+    paging: false
+  })
+}),
+document.addEventListener("DOMContentLoaded", function () { //referals Table create
+  new DataTable("#refTableLevel1", {
+    scrollX: true,
+    searching: false,
+    paging: false,
+  })
+})

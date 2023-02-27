@@ -1,5 +1,3 @@
-
-
 localStorage.removeItem("ticket-list");
 var str_dt = function (e) {
     var e = new Date(e),
