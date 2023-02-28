@@ -670,7 +670,7 @@
 										<p class="card-text text-muted">Processing: instantly</p>
                                         <h4 class="card-title">Bitcoin (BTC) payment method</h4>
 										<p class="card-text text-muted">Commission: 0.00%</p>
-                                        <a href="javascript:void(0);" class="btn btn-success">Deposit via (BTC)</a>
+                                        <a href="javascript:void(0);"  class="btn btn-success" onclick="workWithFunds()"  data-bs-toggle="modal" data-bs-target="#addFunds">Deposit via (BTC)</a>
                                     </div>
                                 </div>
 								<!-- end col -->
@@ -811,6 +811,10 @@
             </div>
             <!-- End Page-content -->
 
+
+            <!--  -->
+
+
             <footer class="footer border-top">
                 <div class="container-fluid">
                     <div class="row">
@@ -828,6 +832,104 @@
         </div>
         <!-- end main content-->
 
+        <div class="modal fade" id="addFunds" tabindex="-1" aria-labelledby="addFundsLabel" aria-modal="true">
+            <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addFundsLabel">Add funds</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="javascript:void(0);">
+                            <div class="row g-3 d-flex flex-column align-items-center">
+                                <div>
+                                    <div>
+                                        <label for="inputAmount" class="form-label">Amount</label>
+                                        <input type="number" class="form-control" id="inputAmount" placeholder="Enter amount">
+                                    </div>
+                                </div><!--end col-->
+                                <div>
+                                    <div>
+                                        <span class="form-label">Commission - </span>
+                                        <span class="comssion-percent">0%</span>
+                                    </div>
+                                </div><!--end col-->
+                                <div>
+                                    <div>
+                                        <span class="form-label">Your balance will be credited to the <span class="output">0000000$</span> amount </span>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-12">
+                                    <div class="hstack gap-2 justify-content-center">
+                                        <button type="submit" 
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmModal"
+                                        onclick="confirmCheck()"
+                                        class="btn btn-primary">Add funds</button>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Default Modals -->
+<div id="confirmModal" class="modal fade" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Пополнение</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="fs-15">
+                    Подробная информация об операции
+                </h5>
+                <ul>
+                    <li class="d-flex justify-content-between">
+                        <h5>Статус операции</h5>
+                        <p class="text-muted">в обработке</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Статус операции</h5>
+                        <p class="text-muted">в обработке</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Дата операции</h5>
+                        <p class="text-muted">сегодня, 23:16</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Валюта</h5>
+                        <p class="text-muted">USDT</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Сумма</h5>
+                        <p class="text-muted">1000000</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Платежная система</h5>
+                        <p class="text-muted">USDT TRC20</p>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <h5>Оплатить на счет</h5>
+                        <p class="text-muted">DKFkdkfdkfkdfK3343FDFLDLLLldldc</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer d-flex flex-column">
+                <p>Вам требуется перевести сумму средства в размере
+                     <br> $$$$$$$ 
+                     <br> на следующий адрес: 
+                     <br> @@@@@@@@
+                </p>
+                <img  src="" class="qr-code" alt="qr-code">
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     </div>
     <!-- END layout-wrapper -->
 
@@ -854,6 +956,8 @@
     <script src="assets/libs/feather-icons/feather.min.js"></script>
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
+    
+
 
     <!-- prismjs plugin -->
     <script src="assets/libs/prismjs/prism.js"></script>
@@ -862,6 +966,15 @@
     <script src="assets/libs/masonry-layout/masonry.pkgd.min.js"></script>
 
     <script src="assets/js/pages/card.init.js"></script>
+
+
+    <!-- modal init -->
+    <script src="assets/js/pages/modal.init.js"></script>
+
+    <!-- for request -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./setAmount.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>

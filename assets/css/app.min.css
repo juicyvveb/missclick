@@ -14490,3 +14490,16 @@ body::before {
 #scroll-horizontal .s_system{
     min-width: 230px;
 }
+
+
+#addFunds {
+    transform: translateY(-5%);
+}
+#addFunds .modal-dialog{
+    width: 90%;
+}
+@media (min-width: 1024px) {
+    #addFunds {
+        transform: translateY(-15%);
+    }
+}
