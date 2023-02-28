@@ -14498,8 +14498,12 @@ body::before {
 #addFunds .modal-dialog{
     width: 90%;
 }
-@media (min-width: 1024px) {
-    #addFunds {
-        transform: translateY(-15%);
-    }
+#confirmModal {
+    transform: translateY(-5%);
+}
+#confirmModal .qr-code{
+    width: 50%;
+}
+#confirmModal h5, p {
+    margin-bottom: 0;
 }

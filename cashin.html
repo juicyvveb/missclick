@@ -670,7 +670,7 @@
 										<p class="card-text text-muted">Processing: instantly</p>
                                         <h4 class="card-title">Bitcoin (BTC) payment method</h4>
 										<p class="card-text text-muted">Commission: 0.00%</p>
-                                        <a href="javascript:void(0);"  class="btn btn-success" onclick="workWithFunds()"  data-bs-toggle="modal" data-bs-target="#addFunds">Deposit via (BTC)</a>
+                                        <a href="javascript:void(0);"  class="btn btn-success" data-curr="BTC" onclick="workWithFunds(this)"  data-bs-toggle="modal" data-bs-target="#addFunds">Deposit via (BTC)</a>
                                     </div>
                                 </div>
 								<!-- end col -->
@@ -843,20 +843,23 @@
                         <form action="javascript:void(0);">
                             <div class="row g-3 d-flex flex-column align-items-center">
                                 <div>
-                                    <div>
-                                        <label for="inputAmount" class="form-label">Amount</label>
-                                        <input type="number" class="form-control" id="inputAmount" placeholder="Enter amount">
+                                    <div id="amountField">
+                                        <label for="inputAmount" class="form-label" >Amount</label>
+                                        <div class="form-control  py-0 pr-5 d-flex align-items-center">
+                                            <input type="number" class="form-control border-0 px-0"  id="inputAmount" placeholder="Enter amount">
+                                            <span class="currency"></span>
+                                        </div>
                                     </div>
                                 </div><!--end col-->
-                                <div>
+                                <div >
                                     <div>
                                         <span class="form-label">Commission - </span>
                                         <span class="comssion-percent">0%</span>
                                     </div>
                                 </div><!--end col-->
-                                <div>
+                                <div >
                                     <div>
-                                        <span class="form-label">Your balance will be credited to the <span class="output">0000000$</span> amount </span>
+                                        <span class="form-label">Your balance will be credited to the <span class="output">0000000</span> USD amount </span>
                                     </div>
                                 </div><!--end col-->
                                 <div class="col-lg-12">
@@ -876,55 +879,54 @@
         </div>
 
         <!-- Default Modals -->
-<div id="confirmModal" class="modal fade" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
+<div id="confirmModal" data-mod="suka" class="modal fade" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myModalLabel">Пополнение</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pt-1 flex-column">
                 <h5 class="fs-15">
                     Подробная информация об операции
                 </h5>
-                <ul>
-                    <li class="d-flex justify-content-between">
+                <ul class="p-0 m-0 mt-4">
+                    <li class="d-flex  justify-content-between border-top border-white align-items-center pt-3 pb-3">
                         <h5>Статус операции</h5>
                         <p class="text-muted">в обработке</p>
                     </li>
-                    <li class="d-flex justify-content-between">
-                        <h5>Статус операции</h5>
-                        <p class="text-muted">в обработке</p>
-                    </li>
-                    <li class="d-flex justify-content-between">
+                    <li class="d-flex justify-content-between border-top border-white align-items-center pt-3 pb-3">
                         <h5>Дата операции</h5>
-                        <p class="text-muted">сегодня, 23:16</p>
+                        <p class="text-muted date">сегодня, 23:16</p>
                     </li>
-                    <li class="d-flex justify-content-between">
+                    <li class="d-flex justify-content-between border-top border-white align-items-center pt-3 pb-3">
                         <h5>Валюта</h5>
-                        <p class="text-muted">USDT</p>
+                        <p class="text-muted curr-name">USDT</p>
                     </li>
-                    <li class="d-flex justify-content-between">
+                    <li class="d-flex justify-content-between border-top border-white align-items-center pt-3 pb-3">
                         <h5>Сумма</h5>
-                        <p class="text-muted">1000000</p>
+                        <p class="text-muted amount">1000000</p>
                     </li>
-                    <li class="d-flex justify-content-between">
+                    <li class="d-flex justify-content-between border-top border-white align-items-center pt-3 pb-3">
                         <h5>Платежная система</h5>
-                        <p class="text-muted">USDT TRC20</p>
+                        <p class="text-muted system">USDT TRC20</p>
                     </li>
-                    <li class="d-flex justify-content-between">
+                    <li class="d-flex justify-content-between border-top border-bottom border-white align-items-center pt-3 pb-3">
                         <h5>Оплатить на счет</h5>
                         <p class="text-muted">DKFkdkfdkfkdfK3343FDFLDLLLldldc</p>
                     </li>
                 </ul>
             </div>
-            <div class="modal-footer d-flex flex-column">
-                <p>Вам требуется перевести сумму средства в размере
-                     <br> $$$$$$$ 
-                     <br> на следующий адрес: 
-                     <br> @@@@@@@@
-                </p>
-                <img  src="" class="qr-code" alt="qr-code">
+            <div class="modal-footer pt-0 p-3 d-flex justify-content-center">
+                <div class="d-flex flex-column align-items-center bg-light p-4">
+                    <p class="text-center font-weight-bold">Вам требуется перевести сумму средства в размере
+                        <br> <span class="check-amount">$$$$$$$ </span>
+                        <br> на следующий адрес: 
+                        <br> <span class="check-address">@@@@@@@@</span>
+                   </p>
+                   <img  src="" class="qr-code" alt="qr-code">
+                </div>
+    
             </div>
 
         </div><!-- /.modal-content -->
