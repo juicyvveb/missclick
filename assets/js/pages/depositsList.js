@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     const warnText = document.querySelector('.noresult');
     const searchInput = document.querySelector('#deposits-search');
+    const infoText = document.querySelector('#b-info')
     const options = {
       valueNames: ['id','start_date', 'currency_name', 'avg_price', "last_accrual", "accrual_count", "deposit_plan", "price", "next_accrual", "status"],
-      page: 5,
+      page: 10,
       pagination: [
         {
           paginationClass: 'listjs-pagination', 
           outerWindow: 2
         }
-      ]
+      ],
     };
     let searchText = "", statusVal = "", dateFrom = new Date('01,01,2000'), dateTo = new Date();
     let list = new List('depositsList', options);
@@ -28,6 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
       searchText = e.target.value.toLowerCase();
       filter()
     })
+
+    searchInput.addEventListener('input', (e) => {
+      if(!e.target.value){
+        searchText = e.target.value.toLowerCase();
+        filter()
+      }
+    })
     
     const myChoice = new Choices('#statusSelectDeposit', {
       searchEnabled: false,
@@ -38,11 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
       statusVal = e.detail.choice.value;
     })
 
+    setInfo()
+
     list.on('updated', (e) => {
       !e.matchingItems.length ? warnText.style.display = "block" : warnText.style.display = "none";
 
       //remove pagintaion by null search result
       e.matchingItems.length ? document.querySelector(`#depositsList .pagination-wrap`).style.display = "flex" : document.querySelector(`#depositsList .pagination-wrap`).style.display = "none"
+
+      setInfo()
     })
 
     filterBtn.onclick = filter;
@@ -62,6 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
       )  && (+dateVal >= +dateFrom && +dateVal <= +dateTo) && item.values().status.toLowerCase().includes(statusVal)
     }) 
     }
+
+    function setInfo(){
+      const sortedVisibles = list.visibleItems.sort((a,b) => a.elm.getAttribute('data-id')-b.elm.getAttribute('data-id'))
+      if(list.matchingItems.length) {infoText.innerHTML = `<span class="${list.matchingItems.length != list.items.length ? 'd-none' : 'd-inline'}">Showing ${sortedVisibles[0].elm.getAttribute('data-id')} to ${sortedVisibles[list.visibleItems.length-1].elm.getAttribute('data-id')} of </span> ${list.matchingItems.length} entries <span class="${list.filtered ? 'd-inline' : 'd-none'}">(filtered from ${list.items.length} total entries)</span>`}
+    }
+
   });
 
   document.querySelector(".pagination-next").addEventListener("click", function () {

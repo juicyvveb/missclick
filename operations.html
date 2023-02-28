@@ -240,7 +240,7 @@
                                 data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-bell fs-22'></i>
                                 <span
-                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">7<span
+                                    class="position-absolute topbar-badge s_status fs-10 translate-middle badge s_status rounded-pill bg-danger">7<span
                                         class="visually-hidden">unread messages</span></span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -253,7 +253,7 @@
                                                 <h6 class="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
                                             </div>
                                             <div class="col-auto dropdown-tabs">
-                                                <span class="badge badge-soft-light fs-13"> 7 New</span>
+                                                <span class="badge s_status badge s_status-soft-light fs-13"> 7 New</span>
                                             </div>
                                         </div>
                                     </div>
@@ -620,7 +620,7 @@
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="account.html"><span
-                                        class="badge bg-soft-success text-success mt-1"></span><i
+                                        class="badge s_status bg-soft-success text-success mt-1"></span><i
                                         class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Settings</span></a>
                                 <a class="dropdown-item" href="tickets.html"><i
@@ -792,7 +792,7 @@
                                             <a href="javascript:void(0);"
                                                 class="badge badge-soft-info badge-border">ETH</a>
                                             <a href="javascript:void(0);"
-                                                class="badge badge-soft-primary badge-border">USD</a>
+                                                class="badge badge-soft-info badge-border">USD</a>
                                             <a href="javascript:void(0);"
                                                 class="badge badge-soft-danger badge-border">EUR</a>
                                         </div>
@@ -816,13 +816,13 @@
                                         </div>
                                         <div class="flex-shrink-0">
                                             <a href="javascript:void(0);"
-                                                class="badge badge-soft-warning badge-border">BTC</a>
-                                            <a href="javascript:void(0);"
-                                                class="badge badge-soft-info badge-border">ETH</a>
-                                            <a href="javascript:void(0);"
-                                                class="badge badge-soft-primary badge-border">USD</a>
-                                            <a href="javascript:void(0);"
-                                                class="badge badge-soft-danger badge-border">EUR</a>
+                                            class="badge badge-soft-warning badge-border">BTC</a>
+                                        <a href="javascript:void(0);"
+                                            class="badge badge-soft-info badge-border">ETH</a>
+                                        <a href="javascript:void(0);"
+                                            class="badge badge-soft-info badge-border">USD</a>
+                                        <a href="javascript:void(0);"
+                                            class="badge badge-soft-danger badge-border">EUR</a>
                                         </div>
                                     </div>
                                     <h3 class="mb-2">$<span class="counter-value" data-target="74361">0</span><small
@@ -848,7 +848,7 @@
                                             <a href="javascript:void(0);"
                                                 class="badge badge-soft-info badge-border">ETH</a>
                                             <a href="javascript:void(0);"
-                                                class="badge badge-soft-primary badge-border">USD</a>
+                                                class="badge badge-soft-info badge-border">USD</a>
                                             <a href="javascript:void(0);"
                                                 class="badge badge-soft-danger badge-border">EUR</a>
                                         </div>
@@ -935,27 +935,27 @@
                                     <i class="ri-search-line search-icon"></i>
                                 </div> -->
                                 <div class="card-body" >
-                                    <div class="table-responsive table-card mb-4" style="overflow-x: auto;">
+                                    <div class="table-responsive table-card mb-4" style="overflow-x: auto; white-space: nowrap">
                                         <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
-                                            <thead>
+                                            <thead style="width:100%">
                                                 <tr>
-                                                    <th>SR No.</th>
-                                                    <th>Operation</th>
-                                                    <th>Payment system</th>
-                                                    <th>Coming</th>
-                                                    <th>Spending</th>
-                                                    <th>Batch-num</th>
-                                                    <th>Data and time</th>
-                                                    <th>Status</th>
-                                                    <th>Description</th>
-                                                    <th>Action</th>
+                                                    <th class="sort asc" data-sort="number" style="min-width: 85px">SR No.</th>
+                                                    <th class="sort" data-sort="s_operation" style="min-width: 115px">Operation</th>
+                                                    <th class="sort" data-sort="currency_name">Payment system</th>
+                                                    <th class="sort" data-sort="s_coming" style="min-width: 100px">Coming</th>
+                                                    <th class="sort" data-sort="s_spending" style="min-width: 100px">Spending</th>
+                                                    <th class="sort" data-sort="s_batch">Batch-num</th>
+                                                    <th class="sort" data-sort="s_data">Data and time</th>
+                                                    <th class="sort" data-sort="s_status">Status</th>
+                                                    <th class="sort" data-sort="s_description" style="min-width: 120px">Description</th>
+                                                    <th class="sort" data-sort="s_action">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="list">
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td class="s_operation"><a href="#!">Profit</a></td>
-                                                    <td class="s_system">
+                                            <tbody class="list form-check-all">
+                                                <tr data-id="1">
+                                                    <td class="number">01</td>
+                                                    <td><a href="#!" class="s_operation">Profit</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/btc.svg" alt=""
@@ -965,22 +965,21 @@
                                                                 class="flex-grow-1 ms-2 currency_name">Bitcoin (BTC)</a>
                                                         </div>
                                                     </td>
-                                                    <td class="s_coming"><span class="	">$10.88</span></td>
+                                                    <td class="s_coming"><span class="text-success">$10.88</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:35</td>
-                                                    <td class="s_status"><span class="badge bg-danger">Canceled</span></td>
+                                                    <td><span class="badge s_status bg-danger">Canceled</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>02</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                <tr data-id="2">
+                                                    <td class="number">02</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/eth.svg" alt=""
@@ -994,18 +993,17 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:28</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting replenishment</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting replenishment</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>03</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                <tr data-id="3">
+                                                    <td class="number">03</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/usdt.svg" alt=""
@@ -1019,18 +1017,17 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:17</td>
-                                                    <td class="s_status"><span class="badge bg-danger">Canceled</span></td>
+                                                    <td><span class="badge s_status bg-danger">Canceled</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>04</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                <tr data-id="4">
+                                                    <td class="number">04</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/trx.svg" alt=""
@@ -1044,18 +1041,18 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:12</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting confirmation</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting confirmation</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="5">
 
-                                                    <td>05</td>
-                                                    <td class="s_operation"><a href="#!">Deposit</a></td>
-                                                    <td class="s_system">
+                                                    <td class="number">05</td>
+                                                    <td><a href="#!" class="s_operation">Deposit</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/bch.svg" alt=""
@@ -1069,18 +1066,17 @@
                                                     <td class="s_spending"><span class="text-danger">$80.00</span></td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:10</td>
-                                                    <td class="s_status"><span class="badge bg-success">Completed</span></td>
+                                                    <td><span class="badge s_status bg-success">Completed</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>06</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                <tr data-id="6">
+                                                    <td class="number">06</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/xrp.svg" alt=""
@@ -1094,18 +1090,18 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">19d49b17c3b5ca1d2a07d2b1cb62d000d9f33fb6</td>
                                                     <td class="s_data">05 Oct, 2021 - 21:07</td>
-                                                    <td class="s_status"><span class="badge bg-success">Completed</span></td>
+                                                    <td><span class="badge s_status bg-success">Completed</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="7">
 
-                                                    <td>07</td>
-                                                    <td class="s_operation"><a href="#!">Profit</a></td>
-                                                    <td class="s_system">
+                                                    <td class="number">07</td>
+                                                    <td><a href="#!" class="s_operation">Profit</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/bnb.svg" alt=""
@@ -1120,18 +1116,18 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:58</td>
-                                                    <td class="s_status"><span class="badge bg-success">Completed</span></td>
+                                                    <td><span class="badge s_status bg-success">Completed</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="8">
 
-                                                    <td>08</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                    <td class="number">08</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/ltc.svg" alt=""
@@ -1145,18 +1141,18 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:47</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting replenishment</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting replenishment</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="9">
 
-                                                    <td>09</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                    <td class="number">09</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/dash.svg" alt=""
@@ -1170,18 +1166,18 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:42</td>
-                                                    <td class="s_status"><span class="badge bg-danger">Canceled</span></td>
+                                                    <td><span class="badge s_status bg-danger">Canceled</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="10">
 
-                                                    <td>10</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">
+                                                    <td class="number">10</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-shrink-0">
                                                                 <img src="assets/images/svg/crypto-icons/doge.svg" alt=""
@@ -1195,71 +1191,70 @@
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:36</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting confirmation</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting confirmation</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="11">
 
-                                                    <td>11</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">USDT TRC-20</td>
+                                                    <td class="number">11</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$125.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:32</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting replenishment</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting replenishment</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="12">
 
-                                                    <td>12</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">USDT TRC-20</td>
+                                                    <td class="number">12</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$44.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:28</td>
-                                                    <td class="s_status"><span class="badge bg-danger">Canceled</span></td>
+                                                    <td><span class="badge s_status bg-danger">Canceled</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr data-id="13">
 
-                                                    <td>13</td>
-                                                    <td class="s_operation"><a href="#!">Refill</a></td>
-                                                    <td class="s_system">USDT TRC-20</td>
+                                                    <td class="number">13</td>
+                                                    <td><a href="#!" class="s_operation">Refill</a></td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming"><span class="text-success">$12.00</span></td>
                                                     <td class="s_spending">—</td>
                                                     <td class="s_batch">19d49b17c3b5ca1d2a07d2b1cb62d000d9f33fb6</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:22</td>
-                                                    <td class="s_status"><span class="badge bg-info">Awaiting confirmation</span></td>
+                                                    <td><span class="badge s_status bg-info">Awaiting confirmation</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
                                                             details</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-
-                                                    <td>14</td>
-                                                    <td class="s_operation"><a href="#!">Deposit</a></td>
-                                                    <td class="s_system">USDT TRC-20</td>
+                                                <tr data-id="14">
+                                                    <td class="number">14</td>
+                                                    <td><a href="#!" class="s_operation">Deposit</a></td>
+                                                    <td class="currency_name">USDT TRC-20</td>
                                                     <td class="s_coming">—</td>
                                                     <td class="s_spending"><span class="text-danger">$165.00</span></td>
                                                     <td class="s_batch">—</td>
                                                     <td class="s_data">05 Oct, 2021 - 20:16</td>
-                                                    <td class="s_status"><span class="badge bg-success">Completed</span></td>
+                                                    <td><span class="badge s_status bg-success">Completed</span></td>
                                                     <td class="s_description">#2</td>
                                                     <td class="s_action">
                                                         <button type="button" class="btn btn-sm btn-soft-primary">View
@@ -1279,7 +1274,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end mt-3">
+                                    <div class="d-flex justify-content-between align-items-center  mt-3">
+                                        <div class="dataTables_info" id="b-info">Showing  1 to $ of __ entries<span class=".filtered">(filtered from 14 total entries)</span></div>
                                         <div class="pagination-wrap hstack gap-2">
                                             <a class="page-item pagination-prev disabled" href="#">
                                                 Previous
@@ -1371,8 +1367,6 @@
     <!-- for making list from table -->
     <script src="assets/libs/list.js/list.min.js"></script>
     
-    <script src="assets/js/pages/datatables.init.js"></script>
-
     <!-- setting operationList, search function and filter functions -->
     <script src="assets/js/pages/searchOperations.js"></script>
 
